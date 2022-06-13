@@ -1,0 +1,31 @@
+<div>
+  <ol>
+    <li *ngFor="let usuario of usuarios" style="cursor: pointer;"  (click)="selectUser(usuario._id)">
+      {{usuario.name}}
+    </li>
+  </ol>
+</div>
+
+<div>
+  <form [formGroup]="form" (submit)="create()">
+    <div>
+      <label> Nombre: </label>
+      <input type="text" formControlName="name">
+    </div>
+    <div>
+      <label> Apellidos: </label>
+      <input type="text" formControlName="lastname">
+    </div>
+    <div>
+      <label> Edad: </label>
+      <input type="text" formControlName="year">
+    </div>
+    <div>
+      <label> DNI: </label>
+      <input type="text" formControlName="dni">
+    </div>
+    <div>
+      <button type="submit">Guardar</button>
+    </div>
+  </form>
+</div>
